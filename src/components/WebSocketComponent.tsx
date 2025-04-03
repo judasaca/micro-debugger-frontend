@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import useWebSocket, { ReadyState } from "react-use-websocket";
-
-const WS_URL = "ws://localhost:8000/ws";
+import { env } from "../constants";
 
 export default function WebSocketComponent() {
-  const { sendMessage, lastMessage, readyState } = useWebSocket(WS_URL, {
+  const { sendMessage, lastMessage, readyState } = useWebSocket(env.VITE_WS, {
     shouldReconnect: () => true, // Auto-reconnect
   });
 
