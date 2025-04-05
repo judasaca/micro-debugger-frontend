@@ -1,3 +1,4 @@
+import { PlusIcon } from "lucide-react";
 import { ModeToggle } from "./menu-toggle";
 import { TypographyH1 } from "./typography/H1";
 import { TypographyP } from "./typography/P";
@@ -17,7 +18,9 @@ const ControlPanel = () => {
 
         <Input />
       </div>
-      <Button>+</Button>
+      <Button>
+        <PlusIcon />
+      </Button>
 
       <Separator orientation="horizontal" />
     </div>
