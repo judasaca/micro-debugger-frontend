@@ -5,7 +5,7 @@ import WebSocketComponent from "./components/WebSocketComponent";
 function App() {
   return (
     <>
-      <div className="w-screen h-screen flex bg-slate-800">
+      <div className="w-screen h-screen flex bg-background">
         <ControlPanel />
       </div>
     </>
