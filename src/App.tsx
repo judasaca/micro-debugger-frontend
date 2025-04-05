@@ -1,4 +1,5 @@
 import "./App.css";
+import PortsList from "./components/control-panel/PortsList";
 import ControlPanel from "./components/ControlPanel";
 import { ModeToggle } from "./components/menu-toggle";
 import { ThemeProvider } from "./components/theme-provider";

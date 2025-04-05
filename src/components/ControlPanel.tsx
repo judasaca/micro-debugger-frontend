@@ -5,6 +5,8 @@ import { TypographyP } from "./typography/P";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Separator } from "./ui/separator";
+import NewPortForm from "./control-panel/NewPortForm";
+import PortsList from "./control-panel/PortsList";
 
 const ControlPanel = () => {
   return (
@@ -13,16 +15,10 @@ const ControlPanel = () => {
         <TypographyH1> Micro Trace</TypographyH1>
         <ModeToggle />
       </div>
-      <div>
-        <TypographyP>Add a new port</TypographyP>
-
-        <Input />
-      </div>
-      <Button>
-        <PlusIcon />
-      </Button>
+      <NewPortForm />
 
       <Separator orientation="horizontal" />
+      <PortsList />
     </div>
   );
 };

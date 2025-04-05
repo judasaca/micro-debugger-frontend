@@ -6,8 +6,8 @@ const PortsList = () => {
   return (
     <div className="flex flex-col gap-1">
       <div>
-        {ports.map((i) => (
-          <div>{i}</div>
+        {ports.map((i, index) => (
+          <div key={`port-${i}-${index}`}>{i}</div>
         ))}
       </div>
     </div>

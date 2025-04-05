@@ -1,11 +1,11 @@
 import { create } from "zustand";
 
 type GlobalStoreState = {
-  ports: string[];
+  ports: number[];
 };
 
 type GlobalStoreActions = {
-  addPort: (port: string) => void;
+  addPort: (port: number) => void;
 };
 
 type GlobalStore = GlobalStoreActions & GlobalStoreState;
