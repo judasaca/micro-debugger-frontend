@@ -9,25 +9,32 @@ import { PlusIcon } from "lucide-react";
 import useGlobalStore from "@/lib/store";
 
 const schema = z.object({
-  port: z.number({ coerce: true }),
+  port: z.number({ message: "Port is required" }),
 });
 
 type SchemaType = z.infer<typeof schema>;
 const NewPortForm = () => {
   const addPort = useGlobalStore((state) => state.addPort);
-  const { handleSubmit, register } = useForm<SchemaType>({
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm<SchemaType>({
     resolver: zodResolver(schema),
   });
   const onSubmit = (data: SchemaType) => {
-    console.log("hey");
     addPort(data.port);
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="flex flex-col gap-3 items-stretch">
-        <TypographyP>Add a new port</TypographyP>
-
-        <Input {...register("port")} />
+      <div className="flex flex-col gap-4 items-stretch">
+        <Input
+          label="Add a new port"
+          type="number"
+          id="port-input"
+          error={errors.port}
+          {...register("port", { valueAsNumber: true })}
+        />
         <Button type="submit">
           <PlusIcon />
         </Button>
